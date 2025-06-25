@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result</title>
+    <meta http-equiv="refresh" content="8;URL='/popup'">
+    <style>
+        body {
+            background: #f0f2f5;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+         .logo {
+            width: 80px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color:black;
+        }
+         h3 {
+            text-align: center;
+            color:black;
+        }
+         h4 {
+            text-align: center;
+            color:black;
+        }
+         h5 {
+            text-align: center;
+            color:black;
+        }
+
+        .info {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border:2px solid black;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1.5px solid black;
+            text-align: left;
+        }
+
+        th {
+            background:#dfdada;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .date {
+            font-size:15px;
+            font-weight: bold;
+            margin-top:30px;
+            margin-left:20px;
+        }
+
+        .sgpa {
+            text-align: right;
+            margin-right: 60px;
+            font-size: 15px;
+            margin-top: -22px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+     <img src="..\static\logo.png" alt="BVDU Logo" class="logo">
+    <h1>Bharati Vidyapeeth <br>
+         (Deemed to be University), Pune</h1>
+         <h3>BACHELOR OF COMPUTER APPLICATIONS (CBCS – 2022 COURSE)</h3>
+         <h5>Statment of Marks/Grade</h5>
+         <h4>APPRIL Examination SUMMER 2025</h4>
+    <div class="info">
+        <p><strong>PRN:</strong> {{ student.prn }}</p>
+        <p><strong>College Name:</strong>Yashwantrao Mohite Institute of Management, Malkapur, Karad</p>
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Semester:</strong> {{ student.semester }}</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Credits</th>
+            <th>Grade</th>
+            <th>Grade Points</th>
+        </tr>
+        {% for subject in student.subjects %}
+        <tr>
+            <td>{{ subject.name }}</td>
+            <td>{{ subject.marks }}</td>
+            <td>{{ subject.credit }}</td>
+            <td>{{ subject.grade }}</td>
+            <td>{{ subject.gradepoint }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="date">Result Dated : 24/06/2025</div>
+    <div class="sgpa">
+        <strong>Total SGPA:</strong> <span style="color: #007bff;">{{ student.sgpa }}</span>
+    </div>
+
+    <div class="footer">
+        &copy; {{ year }} Bharati Vidyapeeth (Deemed to be University), Pune. All rights reserved.
+    </div>
+</div>
+</body>
+</html>
