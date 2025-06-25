@@ -27,6 +27,14 @@
             margin-bottom: 10px;
             color: black;
         }
+        .popup h5 {
+            margin-bottom: 5px;
+            color: black;
+        }
+        .popup i {
+            margin-bottom: 10px;
+            color: black;
+        }
 
         video {
             max-width: 80%;
@@ -58,13 +66,14 @@
         <img src="static\jerry.gif" style="width:60px;height:60px;" class="j">
         <img src="static\monkey.gif" style="width:60px;height:60px;" class="m">
         <h2>HA HA HA..................</h2>
-
+          <h5>Congratulation and Sorry...</h5>
         <video id="myVideo" autoplay muted loop playsinline>
             <source src="{{ url_for('static', filename='mazak.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <button id="start-btn" onclick="enableSound()">▶ Play with Sound</button>
+           <br><i>indrajeet_m_s</i>
     </div>
 
     <script>
